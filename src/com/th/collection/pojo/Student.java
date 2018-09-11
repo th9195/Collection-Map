@@ -3,7 +3,7 @@ package com.th.collection.pojo;
 /**
  * Created by Administrator on 2018/9/11.
  */
-public class Student {
+public class Student implements  Comparable{
     private String name;
     private int age;
 
@@ -54,5 +54,17 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" + "name='" + name + '\'' + ", age=" + age + '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+
+        Student toStudent = (Student) o;
+        if ( this.age == toStudent.getAge() ) {
+              return this.name == null ? 1 : -this.name.compareTo(toStudent.getName());
+        }
+
+        return (toStudent.getAge() - this.getAge());
+
     }
 }

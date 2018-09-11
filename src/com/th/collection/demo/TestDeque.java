@@ -19,6 +19,7 @@ public class TestDeque {
             System.out.println(stu);
         }
 
+
     }
 
 
